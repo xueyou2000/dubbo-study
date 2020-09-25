@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xueyou.studyproject.dubbo</groupId>
+    <artifactId>dubbo-study-root</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>dubbo-study 【根项目】</name>
+    <description>Dubbo练手项目, 用于练习分布式应用</description>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.4.RELEASE</version>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!--私服相关-->
+        <nexus-address>http://m.bank-pay.com:8081</nexus-address>
+        <nexus-username>oper</nexus-username>
+        <nexus-password>oper</nexus-password>
+
+        <!--第三方相关-->
+        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+        <swagger.version>2.9.2</swagger.version>
+        <swagger.user-name>XueYou</swagger.user-name>
+        <swagger.email>xueyou@gmail.com</swagger.email>
+
+        <lombok.version>1.16.8</lombok.version>
+        <fastjson.version>1.2.49</fastjson.version>
+        <dubbo.version>2.7.8</dubbo.version>
+
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <properties>
+                <!-- 数据库 相关-->
+                <mysql.ip>localhost</mysql.ip>
+                <mysql.prot>3306</mysql.prot>
+                <mysql.username>root</mysql.username>
+                <mysql.password>Yanglian2019</mysql.password>
+
+                <!-- 日志目录-->
+                <logback.logpath>../logs</logback.logpath>
+            </properties>
+        </profile>
+
+    </profiles>
+
+    <build>
+        <plugins>
+            <!--跳过单元测试-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>account</module>
+        <module>common</module>
+    </modules>
+
+</project>

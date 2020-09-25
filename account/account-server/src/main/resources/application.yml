@@ -1,0 +1,14 @@
+server:
+  port: 8010
+  tomcat:
+    uri-encoding: UTF-8
+
+logback:
+  logpath: @logback.logpath@
+
+swagger:
+  title: @project.artifactId@
+  description: @project.description@
+  version: @project.version@
+  name: @swagger.user-name@
+  email: @swagger.email@
