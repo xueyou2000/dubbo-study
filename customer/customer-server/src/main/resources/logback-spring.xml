@@ -8,7 +8,7 @@
  -->
 <configuration>
     <property name="ERROR_DIR" value="error" />
-    <springProperty scope="context" name="APP_NAME" source="logback.appName"/>
+    <springProperty scope="context" name="APP_NAME" source="logback.name"/>
     <springProperty scope="context" name="LOG_HOME" source="logback.logpath" defaultValue="../logs"/>
 
 

@@ -5,7 +5,7 @@ server:
 
 logback:
   logpath: @logback.logpath@
-  app-name: @artifactId@
+  name: @artifactId@
 
 swagger:
   title: @project.artifactId@
