@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -18,7 +19,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @ApiModel(value = "Account", description = "账户信息")
-public class Account {
+public class Account implements Serializable {
 
     /**
      * id

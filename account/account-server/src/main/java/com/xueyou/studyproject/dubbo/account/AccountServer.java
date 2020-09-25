@@ -1,13 +1,11 @@
 package com.xueyou.studyproject.dubbo.account;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 /**
  * 账户服务
@@ -19,9 +17,10 @@ import java.net.UnknownHostException;
 
 @Slf4j
 @SpringBootApplication
+@EnableDubbo(scanBasePackages = "com.xueyou.studyproject.dubbo.account.dubbo")
 public class AccountServer {
 
-    public static void main(String[] args) throws UnknownHostException {
+    public static void main(String[] args) {
         ConfigurableApplicationContext application = SpringApplication.run(AccountServer.class, args);
         Environment env = application.getEnvironment();
         String port = env.getProperty("server.port");

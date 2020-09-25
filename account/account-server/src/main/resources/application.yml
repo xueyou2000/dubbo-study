@@ -13,3 +13,14 @@ swagger:
   version: @project.version@
   name: @swagger.user-name@
   email: @swagger.email@
+
+dubbo:
+  application:
+    name: @project.artifactId@
+  consumer:
+    timeout: 6000
+  protocol:
+    name: dubbo
+    port: 20810
+  registry:
+    address: N/A

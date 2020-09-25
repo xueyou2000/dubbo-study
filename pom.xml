@@ -32,7 +32,6 @@
         <swagger.version>2.9.2</swagger.version>
         <swagger.user-name>XueYou</swagger.user-name>
         <swagger.email>xueyou@gmail.com</swagger.email>
-
         <lombok.version>1.16.8</lombok.version>
         <fastjson.version>1.2.49</fastjson.version>
         <dubbo.version>2.7.8</dubbo.version>
