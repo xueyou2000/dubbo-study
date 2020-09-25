@@ -3,11 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>account</artifactId>
+    <artifactId>customer</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>account 【账户服务】</name>
-    <description>提供账户的开户, 入账, 出账, 对账, 调账等功能.</description>
+    <name>customer 【商户服务】</name>
+    <description>提供商户的入网, 提现, 发起付款等服务</description>
 
     <parent>
         <artifactId>dubbo-study-root</artifactId>
@@ -16,8 +16,7 @@
     </parent>
 
     <modules>
-        <module>account-model</module>
-        <module>account-server</module>
+        <module>customer-server</module>
     </modules>
 
 </project>

@@ -30,7 +30,7 @@ public class AccountController {
      * 查询全部账户
      */
     @ApiOperation(value = "查询全部账户",  httpMethod = "POST")
-    @RequestMapping(value = "/queryAllAccount", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/queryAllAccount", produces = MediaType.APPLICATION_JSON_VALUE)
     Response<List<Account>> queryAllAccount() {
         List<Account> accounts = new ArrayList<>();
         Account account = new Account();

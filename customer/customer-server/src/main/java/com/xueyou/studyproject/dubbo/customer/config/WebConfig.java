@@ -1,4 +1,4 @@
-package com.xueyou.studyproject.dubbo.account.config;
+package com.xueyou.studyproject.dubbo.customer.config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
