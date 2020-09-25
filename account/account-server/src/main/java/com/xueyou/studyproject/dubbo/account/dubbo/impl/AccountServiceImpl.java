@@ -17,7 +17,7 @@ import java.util.List;
  * @version V1.0.0
  * @since 2020/9/25 2:49 下午
  */
-@DubboService
+@DubboService(version = "${dubbo.service.version}")
 public class AccountServiceImpl implements AccountService {
 
     /**

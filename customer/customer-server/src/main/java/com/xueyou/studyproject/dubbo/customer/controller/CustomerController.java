@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "CustomerController", tags = "商户实体控制器")
 public class CustomerController {
 
-    @DubboReference(url = "dubbo://127.0.0.1:20810")
+    @DubboReference(version = "${dubbo.service.version}")
     private AccountService accountService;
 
     /**
