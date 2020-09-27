@@ -23,6 +23,15 @@ dubbo:
     name: dubbo
     port: 20840
   registry:
-    address: nacos://192.168.1.25:8848
+    address: nacos://@nacos.host@:@nacos.port@
   service:
     version: 1.0.0
+
+nacos:
+  config:
+    server-addr: @nacos.host@:@nacos.port@
+    max-retry: 10 # 最大重试次数
+    auto-refresh: false # 开启自动刷新
+    config-retry-time: 2333 # 重试时间
+    config-long-poll-timeout: 46000 # 配置监听长轮训超时时间
+    namespace: 91481052-e652-49e9-9b02-1724e3dd6c23
