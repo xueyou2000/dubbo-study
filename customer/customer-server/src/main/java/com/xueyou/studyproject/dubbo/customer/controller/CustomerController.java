@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "CustomerController", tags = "商户实体控制器")
 public class CustomerController {
 
-    @DubboReference(version = "${dubbo.service.version}")
+    @DubboReference(version = "${dubbo.service.version}", check = false)
     private AccountService accountService;
 
     /**

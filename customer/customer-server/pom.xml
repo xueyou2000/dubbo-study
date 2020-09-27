@@ -50,7 +50,7 @@
             <version>${fastjson.version}</version>
         </dependency>
 
-        <!-- Dubbo RPC调用 -->
+        <!-- Dubbo 生态 -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
@@ -72,6 +72,11 @@
             <version>${nacos.config.version}</version>
         </dependency>
         <!--  熔断  -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-apache-dubbo-adapter</artifactId>
+            <version>${sentinel.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
@@ -123,7 +128,6 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-common</artifactId>

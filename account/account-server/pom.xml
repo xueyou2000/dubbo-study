@@ -71,12 +71,12 @@
             <artifactId>nacos-config-spring-boot-starter</artifactId>
             <version>${nacos.config.version}</version>
         </dependency>
+        <!--  熔断  -->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-apache-dubbo-adapter</artifactId>
             <version>${sentinel.version}</version>
         </dependency>
-        <!--  熔断  -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>

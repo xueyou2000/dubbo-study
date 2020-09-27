@@ -4,6 +4,7 @@ import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
 import com.xueyou.studyproject.dubbo.account.entity.Account;
 import com.xueyou.studyproject.dubbo.account.enums.AccountStatus;
 import com.xueyou.studyproject.dubbo.account.enums.AccountType;
+import com.xueyou.studyproject.dubbo.account.mapper.AccountMapper;
 import com.xueyou.studyproject.dubbo.common.enums.UserType;
 import com.xueyou.studyproject.dubbo.common.vo.Response;
 import io.swagger.annotations.Api;
@@ -14,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +36,10 @@ public class AccountController {
 
     @Value(value = "${accountStatus:}")
     private String accountStatus;
+
+    @Resource
+    private AccountMapper accountMapper;
+
     /**
      * 查询全部账户
      */
@@ -41,21 +47,7 @@ public class AccountController {
     @RequestMapping(value = "/queryAllAccount", produces = MediaType.APPLICATION_JSON_VALUE)
     Response<List<Account>> queryAllAccount() {
         log.info("accountStatus=[{}]", accountStatus);
-        List<Account> accounts = new ArrayList<>();
-        Account account = new Account();
-        account.setAccountStatus(AccountStatus.NORMAL);
-        account.setAccountType(AccountType.CASH);
-        account.setBalance(10);
-        account.setTransitBal(0);
-        account.setFreezeBal(0);
-//        account.setCreateTime(LocalDateTime.now());
-//        account.setUpdateTime(LocalDateTime.now());
-        account.setAccountId(1515151544);
-        account.setUserId(15);
-        account.setUserType(UserType.CUSTOMER);
-        account.setOptimistic(0);
-        accounts.add(account);
-        return Response.Ok(accounts);
+        return Response.Ok(accountMapper.selectList(null));
 
     }
 
