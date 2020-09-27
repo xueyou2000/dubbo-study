@@ -11,7 +11,6 @@
     <springProperty scope="context" name="APP_NAME" source="logback.name"/>
     <springProperty scope="context" name="LOG_HOME" source="logback.logpath" defaultValue="../logs"/>
 
-
     <!-- 配置日志打印到到标准输入输出 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">

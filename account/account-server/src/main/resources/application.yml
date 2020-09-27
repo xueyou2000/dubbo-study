@@ -17,6 +17,7 @@ swagger:
 dubbo:
   application:
     name: @project.artifactId@
+    logger: slf4j
   consumer:
     timeout: 6000
   protocol:

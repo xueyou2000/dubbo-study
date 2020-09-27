@@ -17,11 +17,12 @@ swagger:
 dubbo:
   application:
     name: @project.artifactId@
+    logger: slf4j
   consumer:
     timeout: 6000
   protocol:
     name: dubbo
-    port: 20840
+    port: -1
   registry:
     address: nacos://@nacos.host@:@nacos.port@
   service:

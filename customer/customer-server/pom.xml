@@ -57,22 +57,14 @@
             <version>${dubbo.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.alibaba.spring</groupId>
             <artifactId>spring-context-support</artifactId>
-            <version>1.0.10</version>
+            <version>${dubbo.spring-context-support}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
             <version>${dubbo.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-client</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.boot</groupId>
@@ -123,17 +115,8 @@
                         <groupId>org.springframework</groupId>
                         <artifactId>spring</artifactId>
                     </exclusion>
-                    <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
                 </exclusions>
             </dependency>
-
 
         </dependencies>
     </dependencyManagement>
