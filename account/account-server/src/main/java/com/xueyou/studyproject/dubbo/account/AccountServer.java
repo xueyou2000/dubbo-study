@@ -2,6 +2,7 @@ package com.xueyou.studyproject.dubbo.account;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -18,6 +19,7 @@ import org.springframework.core.env.Environment;
 @Slf4j
 @SpringBootApplication
 @EnableDubbo(scanBasePackages = "com.xueyou.studyproject.dubbo.account.dubbo")
+@MapperScan("com.xueyou.studyproject.dubbo.account.mapper")
 public class AccountServer {
 
     public static void main(String[] args) {

@@ -14,7 +14,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,12 +48,12 @@ public class AccountController {
         account.setBalance(10);
         account.setTransitBal(0);
         account.setFreezeBal(0);
-        account.setCreateTime(LocalDateTime.now());
-        account.setUpdateTime(LocalDateTime.now());
-        account.setId(1515151544);
+//        account.setCreateTime(LocalDateTime.now());
+//        account.setUpdateTime(LocalDateTime.now());
+        account.setAccountId(1515151544);
         account.setUserId(15);
         account.setUserType(UserType.CUSTOMER);
-        account.setVersion(0);
+        account.setOptimistic(0);
         accounts.add(account);
         return Response.Ok(accounts);
 

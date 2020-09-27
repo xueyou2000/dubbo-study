@@ -1,5 +1,8 @@
 package com.xueyou.studyproject.dubbo.account.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.xueyou.studyproject.dubbo.account.enums.AccountStatus;
 import com.xueyou.studyproject.dubbo.account.enums.AccountType;
 import com.xueyou.studyproject.dubbo.common.enums.UserType;
@@ -7,6 +10,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import javax.persistence.Version;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -18,14 +22,16 @@ import java.time.LocalDateTime;
  * @since 2020/9/25 12:53 下午
  */
 @Data
+@TableName("account")
 @ApiModel(value = "Account", description = "账户信息")
 public class Account implements Serializable {
 
     /**
-     * id
+     * 账户id
      */
-    @ApiModelProperty(value = "id")
-    private long id;
+    @TableId(type = IdType.ASSIGN_ID)
+    @ApiModelProperty(value = "账户Id")
+    private long accountId;
 
     /**
      * 创建时间
@@ -43,7 +49,8 @@ public class Account implements Serializable {
     /**
      * 乐观锁
      */
-    private int version;
+    @Version
+    private int optimistic;
 
     /**
      * 账户类型

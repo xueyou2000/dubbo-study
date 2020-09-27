@@ -32,12 +32,13 @@ public class AccountServiceImpl implements AccountService {
         account.setBalance(10);
         account.setTransitBal(0);
         account.setFreezeBal(0);
-        account.setCreateTime(LocalDateTime.now());
-        account.setUpdateTime(LocalDateTime.now());
-        account.setId(1515151544);
+//        account.setCreateTime(LocalDateTime.now());
+//        account.setUpdateTime(LocalDateTime.now());
+
+        account.setAccountId(1515151544);
         account.setUserId(15);
         account.setUserType(UserType.CUSTOMER);
-        account.setVersion(0);
+        account.setOptimistic(0);
         accounts.add(account);
         return accounts;
     }
