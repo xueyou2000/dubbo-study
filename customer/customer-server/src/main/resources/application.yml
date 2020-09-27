@@ -36,3 +36,13 @@ nacos:
     config-retry-time: 2333 # 重试时间
     config-long-poll-timeout: 46000 # 配置监听长轮训超时时间
     namespace: 91481052-e652-49e9-9b02-1724e3dd6c23
+
+spring:
+  application:
+    name: @artifactId@
+  cloud:
+    sentinel:
+      transport:
+        dashboard: @sentinel.host@:@sentinel.port@
+      log:
+        dir: @logback.logpath@/scp/
