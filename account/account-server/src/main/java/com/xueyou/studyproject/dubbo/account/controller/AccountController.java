@@ -74,6 +74,7 @@ public class AccountController {
     })
     public Response<IPage<Account>> findByPage(@PathVariable Integer pageNumber, @PathVariable Integer pageSize, @RequestBody AccountQueryDto accountQueryDto) {
         IPage<Account> page = new Page<>(pageNumber, pageSize);
+
         return Response.Ok(accountService.queryByPage(page,accountQueryDto.getAccount(), accountQueryDto.getQueryBaseDto()));
     }
 
@@ -85,7 +86,6 @@ public class AccountController {
     public Response<List<Account>> queryAllAccount() {
         log.info("accountStatus=[{}]", accountStatus);
         return Response.Ok(accountMapper.selectList(null));
-
     }
 
 }

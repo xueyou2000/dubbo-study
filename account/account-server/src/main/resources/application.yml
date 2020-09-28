@@ -38,8 +38,6 @@ nacos:
     namespace: 91481052-e652-49e9-9b02-1724e3dd6c23
 
 spring:
-  profiles:
-    active: dev
   application:
     name: @artifactId@
   datasource:

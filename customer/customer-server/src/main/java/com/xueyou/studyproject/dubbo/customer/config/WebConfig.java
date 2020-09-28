@@ -1,8 +1,10 @@
 package com.xueyou.studyproject.dubbo.customer.config;
 
+import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.xueyou.studyproject.dubbo.customer.config.fasjjson.LocalDateTimeSerializer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -11,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -72,6 +75,11 @@ public class WebConfig implements WebMvcConfigurer {
                 // 循环引用
                 SerializerFeature.DisableCircularReferenceDetect,
         };
+
+        // 转换 LocalDateTime 类型
+        SerializeConfig serializeConfig = SerializeConfig.globalInstance;
+        serializeConfig.put(LocalDateTime.class, LocalDateTimeSerializer.instance);
+        fastJsonConfig.setSerializeConfig(serializeConfig);
 
         fastJsonConfig.setSerializerFeatures(serializerFeatures);
         fastJsonConfig.setCharset(StandardCharsets.UTF_8);

@@ -11,7 +11,7 @@ import java.util.List;
  * @version V1.0.0
  * @since 2020/9/25 2:48 下午
  */
-public interface AccountService {
+public interface AccountDubbo {
 
     /**
      * 查询全部账户
