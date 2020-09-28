@@ -13,10 +13,10 @@ DROP INDEX idx_acc_user ON account;
 /*==============================================================*/
 create table account
 (
-    account_id                   int not null auto_increment comment '账户ID',
-    optimistic           int comment '欢乐锁',
-    create_time          datetime comment '创建时间',
-    update_time           datetime comment '更新时间',
+    account_id                   bigint(20) not null comment '账户ID',
+    version              int comment '欢乐锁',
+    create_time          datetime null default CURRENT_TIMESTAMP comment '创建时间',
+    update_time          datetime null default CURRENT_TIMESTAMP comment '更新时间',
     account_type         varchar(30) not null comment '账户类型',
     account_status       varchar(30) not null comment '账户状态',
     balance              double(11,2) not null comment '账户余额',

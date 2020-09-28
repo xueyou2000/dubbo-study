@@ -6,7 +6,6 @@ import com.xueyou.studyproject.dubbo.account.enums.AccountStatus;
 import com.xueyou.studyproject.dubbo.common.enums.UserType;
 import org.apache.dubbo.config.annotation.DubboService;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,16 +28,16 @@ public class AccountServiceImpl implements AccountService {
         Account account = new Account();
         account.setAccountStatus(AccountStatus.NORMAL);
         account.setAccountStatus(AccountStatus.NORMAL);
-        account.setBalance(10);
-        account.setTransitBal(0);
-        account.setFreezeBal(0);
+        account.setBalance(10D);
+        account.setTransitBal(0D);
+        account.setFreezeBal(0D);
 //        account.setCreateTime(LocalDateTime.now());
 //        account.setUpdateTime(LocalDateTime.now());
 
-        account.setAccountId(1515151544);
-        account.setUserId(15);
+        account.setAccountId(1515151544L);
+        account.setUserId(15L);
         account.setUserType(UserType.CUSTOMER);
-        account.setOptimistic(0);
+        account.setVersion(0);
         accounts.add(account);
         return accounts;
     }

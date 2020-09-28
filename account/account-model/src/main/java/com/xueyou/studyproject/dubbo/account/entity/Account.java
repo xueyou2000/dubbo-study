@@ -31,7 +31,7 @@ public class Account implements Serializable {
      */
     @TableId(type = IdType.ASSIGN_ID)
     @ApiModelProperty(value = "账户Id")
-    private long accountId;
+    private Long accountId;
 
     /**
      * 创建时间
@@ -50,7 +50,7 @@ public class Account implements Serializable {
      * 乐观锁
      */
     @Version
-    private int optimistic;
+    private Integer version;
 
     /**
      * 账户类型
@@ -69,26 +69,26 @@ public class Account implements Serializable {
      * 账户可用余额 = 账户余额  - (在途 + 冻结)
      */
     @ApiModelProperty(value = "账户余额")
-    private double balance;
+    private Double balance;
 
     /**
      * 在途金额
      */
     @ApiModelProperty(value = "在途金额")
-    private double transitBal;
+    private Double transitBal;
 
     /**
      * 冻结金额
      */
     @ApiModelProperty(value = "冻结金额")
-    private double freezeBal;
+    private Double freezeBal;
 
     /**
      * 用户ID
      * 指定此账户输入哪个用户
      */
     @ApiModelProperty(value = "用户ID")
-    private long userId;
+    private Long userId;
 
     /**
      * 用户类型

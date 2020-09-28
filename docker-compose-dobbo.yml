@@ -18,16 +18,20 @@ services:
       - 8858:8858
     restart: always
   # 管理控制台, 服务查询，服务治理, 服务测试
-  dubbo-admin:
-    image: apache/dubbo-admin
-    ports:
-      - 8090:8090
-    environment:
-      - admin.registry.address=nacos://127.0.0.1:8848
-      - admin.config-center=nacos://127.0.0.1:8848
-      - admin.metadata-report.address=nacos://127.0.0.1:8848
-      - dubbo.admin.root.password=admin123
-      - admin.registry.group=dubbo
-      - admin.config-center.group=dubbo
-      - admin.metadata-report.group=dubbo
-    restart: always
+#  dubbo-admin:
+#    image: apache/dubbo-admin
+#    depends_on:
+#      - nacos-standalone
+#    ports:
+#      - 8090:8090
+#    environment:
+#      - admin.registry.address=nacos://127.0.0.1:8848
+#      - admin.config-center=nacos://127.0.0.1:8848
+#      - admin.metadata-report.address=nacos://127.0.0.1:8848
+#      - admin.registry.group=dubbo
+#      - admin.config-center.group=dubbo
+#      - admin.metadata-report.group=dubbo
+#      - admin.registry.namespace=public
+#      - admin.config-center.namespace=public
+#      - admin.metadata-report.namespace=publi
+#    restart: always

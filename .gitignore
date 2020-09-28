@@ -30,3 +30,7 @@ build/
 ### VS Code ###
 .vscode/
 /logs/
+
+### system ###
+.DS_Store
+*/.DS_Store
