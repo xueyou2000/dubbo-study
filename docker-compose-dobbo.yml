@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  # nacos 注册/配置中心
+  # http://127.0.0.1:8848/nacos  默认账号密码: nacos/nacos
+  nacos-standalone:
+    image: nacos/nacos-server
+    ports:
+      - 8848:8848
+    environment:
+      - MODE=standalone
+    restart: always
+  # sentinel断路器,流量控制
+  # http://127.0.0.1:8858/  默认账号密码: sentinel/sentinel
+  sentinel-dashboard:
+    image: bladex/sentinel-dashboard
+    ports:
+      - 8858:8858
+    restart: always
+  # 管理控制台, 服务查询，服务治理, 服务测试
+  dubbo-admin:
+    image: apache/dubbo-admin
+    ports:
+      - 8090:8090
+    environment:
+      - admin.registry.address=nacos://127.0.0.1:8848
+      - admin.config-center=nacos://127.0.0.1:8848
+      - admin.metadata-report.address=nacos://127.0.0.1:8848
+      - dubbo.admin.root.password=admin123
+      - admin.registry.group=dubbo
+      - admin.config-center.group=dubbo
+      - admin.metadata-report.group=dubbo
+    restart: always
