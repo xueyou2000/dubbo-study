@@ -1,0 +1,31 @@
+package ${package}.${moduleName}.dto;
+
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import java.io.Serializable;
+
+import ${package}.common.dto.BaseQueryDto;
+import ${package}.${moduleName}.entity.${className};
+
+/**
+ * ${comments}查询
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@EqualsAndHashCode(callSuper = true)
+@Data
+@ApiModel(value = "${className}QueryDto", description = "${comments}查询")
+public class ${className}QueryDto extends BaseQueryDto implements Serializable {
+
+    /**
+     * ${comments}
+     */
+    @ApiModelProperty(value = "${comments}")
+    private ${className} ${classname} = new ${className}();
+
+}

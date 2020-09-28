@@ -1,0 +1,67 @@
+package ${package}.${moduleName}.controller;
+
+import org.springframework.web.bind.annotation.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import javax.annotation.Resource;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.http.MediaType;
+
+import ${package}.${moduleName}.entity.${className};
+import ${package}.${moduleName}.service.${className}Service;
+import ${package}.${moduleName}.dto.${className}QueryDto;
+import ${mainPath}.vo.Response;
+
+
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@RestController
+@RequestMapping("${pathName}")
+@Api(value = "${className}Controller", tags = "${comments}控制器")
+public class ${className}Controller {
+
+    @Resource
+    private ${className}Service ${classname}Service;
+
+    /**
+     * 分页查询${comments}
+     */
+    @ApiOperation(value = "分页查询账户信息",  httpMethod = "POST")
+    @PostMapping(value = "/findByPage/{pageNumber}/{pageSize}", produces = "application/json;charset=UTF-8")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageNumber", value = "页码", paramType = "path",required = true),
+            @ApiImplicitParam(name = "pageSize", value = "每页数量", paramType = "path",required = true)
+    })
+    public Response<IPage<${className}>> list(@PathVariable Integer pageNumber, @PathVariable Integer pageSize, @RequestBody ${className}QueryDto ${classname}QueryDto){
+        IPage<${className}> page = new Page<>(pageNumber, pageSize);
+        return Response.Ok(${classname}Service.queryByPage(page, ${classname}QueryDto.get${className}(), ${classname}QueryDto.getQueryBaseDto()));
+    }
+
+    /**
+     * 新增${comments}
+     */
+    @ApiOperation(value = "新增${comments}",  httpMethod = "POST")
+    @RequestMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Boolean> add(@RequestBody ${className} ${classname}){
+        return Response.Ok(${classname}Service.save(${classname}));
+    }
+
+    /**
+     * 修改${comments}
+     */
+    @ApiOperation(value = "修改${comments}",  httpMethod = "POST")
+    @RequestMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Boolean> update(@RequestBody ${className} ${classname}){
+        return Response.Ok(${classname}Service.updateById(${classname}));
+    }
+
+}
